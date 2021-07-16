@@ -47,12 +47,6 @@
             <version>${slf4j.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-
         <!-- logback-classic桥接器，会自动引入logback实现（logback-core） -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
