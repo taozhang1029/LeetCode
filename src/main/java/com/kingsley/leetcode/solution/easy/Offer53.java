@@ -11,6 +11,7 @@ import org.junit.Test;
  * @Project LeetCode
  * @Description 剑指offer53 在排序数组中查找数字 I
  *
+ * 两次二分查找
  * 统计一个数字在排序数组中出现的次数。
  */
 public class Offer53 implements Solution {
@@ -18,11 +19,50 @@ public class Offer53 implements Solution {
     @Test
     @Override
     public void test() {
-        solute(new int[]{123},12);
+        solute(new int[]{5, 7, 7, 8, 8, 10}, 8);
     }
 
     @SolutionEntry
     public int search(int[] nums, int target) {
-        return 0;
+
+        int left = 0;
+        int right = nums.length;
+
+        if (right == 0) {
+            return 0;
+        }
+
+        int p = left;
+        int q = right;
+
+        while (p < q) {
+            int mid = p + (q - p) / 2;
+            int curr = nums[mid];
+            if (curr > target) {
+                q = mid - 1;
+            } else if (curr < target) {
+                p = mid + 1;
+            } else {
+                q = mid;
+            }
+        }
+
+        if (p >= right || nums[p] != target) {
+            return 0;
+        }
+        left = p;
+
+        q = right - 1;
+        while (p <= q) {
+            int mid = p + (q - p) / 2;
+            if (nums[mid] > target) {
+                q = mid - 1;
+            } else {
+                p = mid + 1;
+            }
+        }
+        right = q;
+
+        return right - left + 1;
     }
 }
