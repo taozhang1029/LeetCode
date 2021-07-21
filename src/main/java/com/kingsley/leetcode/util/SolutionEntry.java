@@ -11,4 +11,8 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SolutionEntry {
 
+    boolean useJsonResult() default false;
+
+    boolean countTime() default false;
+
 }

@@ -1,5 +1,7 @@
 package com.kingsley.leetcode.api;
 
+import lombok.Builder;
+
 /**
  * @author kingsley
  * @description 链表节点类
@@ -8,6 +10,7 @@ package com.kingsley.leetcode.api;
  * @project LeetCode
  * @ide Intellij IDEA
  */
+@Builder
 public class ListNode {
 
     public int val;
@@ -23,5 +26,17 @@ public class ListNode {
     public ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("ListNode{").append(val);
+        ListNode tmp = next;
+        while (tmp != null) {
+            sb.append("->").append(tmp.val);
+            tmp = tmp.next;
+        }
+        sb.append("}");
+        return sb.toString();
     }
 }

@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.solution.easy;
+package com.kingsley.leetcode.solution.offer.easy;
 
 import com.kingsley.leetcode.api.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
@@ -10,11 +10,11 @@ import org.junit.Test;
  * @Author kingsley
  * @Project LeetCode
  * @Description 剑指offer53 在排序数组中查找数字 I
- *
+ * <p>
  * 两次二分查找
  * 统计一个数字在排序数组中出现的次数。
  */
-public class Offer53 implements Solution {
+public class Solution53 implements Solution {
 
     @Test
     @Override

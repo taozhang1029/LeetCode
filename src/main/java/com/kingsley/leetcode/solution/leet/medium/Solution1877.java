@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.solution.medium;
+package com.kingsley.leetcode.solution.leet.medium;
 
 import com.kingsley.leetcode.api.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
