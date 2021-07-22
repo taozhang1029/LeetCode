@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.lang.reflect.Proxy;
+import java.math.BigDecimal;
 import java.rmi.AccessException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -39,7 +40,7 @@ public class RunProxy {
                 entry = methods.get(0);
                 int parameterCount = entry.getParameterCount();
                 if (parameterCount != args.length) {
-                    throw new IllegalArgumentException("输入参数与入口方法所需参数数量不一致！");
+                    throw new IllegalArgumentException("入口方法实际参数列表和形式参数列表长度不同！");
                 }
             }
 
@@ -47,9 +48,20 @@ public class RunProxy {
             Parameter[] parameters = entry.getParameters();
             HashMap<String, Object> map = new HashMap<>();
             for (int i = 0; i < parameters.length; i++) {
-                map.put(parameters[i].getName(), args[i]);
+                if (args[i].getClass().isArray()) {
+                    map.put(parameters[i].getName(), Arrays.deepToString((Object[]) args[i]));
+                } else {
+                    boolean isNum = true;
+                    try {
+                        new BigDecimal(args[i].toString());
+                    } catch (NumberFormatException e) {
+                        // 不是数字
+                        isNum = false;
+                    }
+                    map.put(parameters[i].getName(), isNum ? args[i] : args[i].toString());
+                }
             }
-            log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField));
+            log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField).replace("\"[", "[").replaceAll("]\"", "]"));
 
             SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
             long start = System.currentTimeMillis();
@@ -57,12 +69,9 @@ public class RunProxy {
                 result = entry.invoke(solution, args);
                 long end = System.currentTimeMillis();
                 StringBuilder sb = new StringBuilder();
-                sb.append("运行结果：");
+                sb.append("返回结果：");
                 if (result == null) {
-                    sb.append("void");
-                } else if (result.getClass().isArray()) {
-                    String s = Arrays.deepToString(new Object[]{result});
-                    sb.append(s, 1, s.length() - 1);
+                    sb.append("null");
                 } else {
                     sb.append(trans2String(result, annotation.useJsonResult()));
                 }
@@ -82,7 +91,10 @@ public class RunProxy {
     }
 
     private static String trans2String(Object obj, boolean useJson) {
-        return useJson ? JSON.toJSONString(obj) : obj.toString();
+        if (useJson || obj.getClass().isArray()) {
+            return JSON.toJSONString(obj);
+        }
+        return obj.toString();
     }
 
 }
