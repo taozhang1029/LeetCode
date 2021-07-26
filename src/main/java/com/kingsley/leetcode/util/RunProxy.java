@@ -9,7 +9,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.lang.reflect.Proxy;
 import java.math.BigDecimal;
-import java.rmi.AccessException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -33,23 +32,26 @@ public class RunProxy {
                     return m.isAnnotationPresent(SolutionEntry.class);
                 }).collect(Collectors.toList());
                 if (methods.isEmpty()) {
-                    throw new AccessException("没有找到入口方法，请在入口方法添加 @SolutionEntry 注解！");
+                    log.error("没有找到入口方法，请在入口方法添加 @SolutionEntry 注解！");
                 } else if (methods.size() > 1) {
-                    throw new AccessException("存在多个入口方法，请检查！");
+                    log.error("存在多个入口方法，请检查！");
                 }
                 entry = methods.get(0);
                 int parameterCount = entry.getParameterCount();
                 if (parameterCount != args.length) {
-                    throw new IllegalArgumentException("入口方法实际参数列表和形式参数列表长度不同！");
+                    log.error("入口方法实际参数列表和形式参数列表长度不同！");
+                    return null;
                 }
             }
 
             log.info("执行方法：{}", entry.getName());
             Parameter[] parameters = entry.getParameters();
             HashMap<String, Object> map = new HashMap<>();
+            boolean existArray = false;
             for (int i = 0; i < parameters.length; i++) {
                 if (args[i].getClass().isArray()) {
-                    map.put(parameters[i].getName(), Arrays.deepToString((Object[]) args[i]));
+                    map.put(parameters[i].getName(), Arrays.deepToString(new Object[]{args[i]}));
+                    existArray = true;
                 } else {
                     boolean isNum = true;
                     try {
@@ -61,7 +63,11 @@ public class RunProxy {
                     map.put(parameters[i].getName(), isNum ? args[i] : args[i].toString());
                 }
             }
-            log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField).replace("\"[", "[").replaceAll("]\"", "]"));
+            if (existArray) {
+                log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField).replace("\"[", "").replaceAll("]\"", ""));
+            } else {
+                log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField));
+            }
 
             SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
             long start = System.currentTimeMillis();
@@ -80,8 +86,7 @@ public class RunProxy {
                     log.info("运行耗时：{}ms", end - start);
                 }
             } catch (Exception e) {
-                log.error("方法调用异常: ");
-                e.printStackTrace();
+                log.error("方法调用异常: ", e);
             }
 
             return result;

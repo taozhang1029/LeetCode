@@ -1,14 +1,14 @@
-package com.kingsley.leetcode.solution.offer.easy;
+package com.kingsley.leetcode.solution.offer;
 
 import com.kingsley.leetcode.api.ListNode;
 import com.kingsley.leetcode.api.Solution;
-import com.kingsley.leetcode.solution.leet.easy.Solution160;
+import com.kingsley.leetcode.solution.leet.No101_200.Solution160;
 import org.junit.Test;
 
 /**
  * 输入两个链表，找出它们的第一个公共节点。
  * https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/
- * 同题 {@link com.kingsley.leetcode.solution.leet.easy.Solution160#getIntersectionNode(ListNode, ListNode)}
+ * 同题 {@link Solution160#getIntersectionNode(ListNode, ListNode)}
  * <p>
  * 如果两个链表没有交点，返回 null.
  * 在返回结果后，两个链表仍须保持原有的结构。

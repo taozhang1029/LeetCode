@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.solution.leet.medium;
+package com.kingsley.leetcode.solution.leet.No1800_1900;
 
 import com.kingsley.leetcode.api.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;

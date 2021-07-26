@@ -1,7 +1,8 @@
-package com.kingsley.leetcode.solution.leet.easy;
+package com.kingsley.leetcode.solution.leet.No101_200;
 
 import com.kingsley.leetcode.api.ListNode;
 import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.solution.offer.Solution52;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 import org.springframework.stereotype.Component;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
  * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
- * 同题 {@link com.kingsley.leetcode.solution.offer.easy.Solution52#getIntersectionNode(ListNode, ListNode)}
+ * 同题 {@link Solution52#getIntersectionNode(ListNode, ListNode)}
  * <p>
  * 时间复杂度O(n)，空间复杂度O(1)
  * listA 中节点数目为 m

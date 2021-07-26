@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.solution.offer.medium;
+package com.kingsley.leetcode.solution.offer;
 
 import com.kingsley.leetcode.api.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
