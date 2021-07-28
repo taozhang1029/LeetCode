@@ -1,6 +1,5 @@
 package com.kingsley.leetcode.api;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +8,6 @@ import lombok.NoArgsConstructor;
  * Created by zhangtao552 on 2021/7/26.
  */
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
 public class TreeNode {
 
@@ -21,6 +19,12 @@ public class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
+    }
+
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 
     @Override
