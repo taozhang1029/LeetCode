@@ -24,9 +24,8 @@ public class Solution1104 implements Solution {
 
     @SolutionEntry
     public List<Integer> pathInZigZagTree(int label) {
-        // @TODO 算法有误
         List<Integer> result = new LinkedList<>();
-        double tmp = Math.log(label) / Math.log(2);
+        double tmp = Math.log(label + 1) / Math.log(2);
         int layer = (tmp == (int) tmp) ? (int) tmp : (int) tmp + 1;
         while (layer > 0) {
             result.add(label);
@@ -45,6 +44,7 @@ public class Solution1104 implements Solution {
     @Test
     @Override
     public void test() {
-        solute(16); // [1,3,4,14]
+        solute(14); // [1,3,4,14]
+        solute(16); // [1,3,4,15,16]
     }
 }

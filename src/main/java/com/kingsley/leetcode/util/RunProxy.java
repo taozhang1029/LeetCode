@@ -21,7 +21,12 @@ import java.util.stream.Collectors;
 @Slf4j
 public class RunProxy {
 
+    private static int cnt;
+
     public static Object invoke(Solution solution, Object... args) {
+        if (cnt > 0) {
+            log.info("=========================================");
+        }
         Solution proxyInstance = (Solution) Proxy.newProxyInstance(solution.getClass().getClassLoader(), solution.getClass().getInterfaces(), (proxy, method, params) -> {
             Object result = null;
             String methodName = method.getName();
@@ -63,11 +68,12 @@ public class RunProxy {
                     map.put(parameters[i].getName(), isNum ? args[i] : args[i].toString());
                 }
             }
+
+            String argsInfo = JSON.toJSONString(map, SerializerFeature.MapSortField);
             if (existArray) {
-                log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField).replace("\"[", "").replaceAll("]\"", ""));
-            } else {
-                log.info("方法入参：{}", JSON.toJSONString(map, SerializerFeature.MapSortField));
+                argsInfo = argsInfo.replace("\"[", "").replaceAll("]\"", "");
             }
+            log.info("方法入参：{}", argsInfo);
 
             SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
             long start = System.currentTimeMillis();
@@ -91,7 +97,7 @@ public class RunProxy {
 
             return result;
         });
-
+        cnt++;
         return proxyInstance.solute(args);
     }
 
