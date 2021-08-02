@@ -18,7 +18,7 @@
 
         <dependency>
             <groupId>com.kingsley</groupId>
-            <artifactId>color-log-util</artifactId>
+            <artifactId>color-log</artifactId>
             <version>1.0-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
