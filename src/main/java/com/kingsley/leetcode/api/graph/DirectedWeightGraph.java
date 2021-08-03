@@ -42,6 +42,15 @@ public class DirectedWeightGraph {
         return adj[point];
     }
 
+    public int getWeight(int from, int to) {
+        for (DirectedWeightEdge edge : adj[from]) {
+            if (edge.getTo() == to) {
+                return edge.getWeight();
+            }
+        }
+        return Integer.MAX_VALUE / 2;
+    }
+
     public String toString() {
         StringBuilder s = new StringBuilder(pointNum + " 个顶点, " + edgeNum + " 条边\n");
         for (int i = 0; i < pointNum; i++) {
