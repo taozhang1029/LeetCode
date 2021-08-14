@@ -9,6 +9,7 @@ import java.lang.annotation.*;
 @Documented
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
+@SuppressWarnings("unused")
 public @interface SolutionEntry {
 
     boolean useJsonResult() default false;

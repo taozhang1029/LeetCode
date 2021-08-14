@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
  * Created by zhangtao1029 on 2021/7/15.
  */
 @Slf4j
-public class RunProxy {
+public class SolutionProxy {
 
     private static int cnt;
 
@@ -44,7 +44,7 @@ public class RunProxy {
                 entry = methods.get(0);
                 int parameterCount = entry.getParameterCount();
                 if (parameterCount != args.length) {
-                    log.error("入口方法实际参数列表和形式参数列表长度不同！");
+                    log.error("入口方法实际参数列表和形式参数列表长度不一致！");
                     return null;
                 }
             }

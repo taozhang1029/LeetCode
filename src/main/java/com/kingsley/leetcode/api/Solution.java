@@ -1,6 +1,6 @@
 package com.kingsley.leetcode.api;
 
-import com.kingsley.leetcode.util.RunProxy;
+import com.kingsley.leetcode.util.SolutionProxy;
 import org.junit.Test;
 
 /**
@@ -13,7 +13,7 @@ public interface Solution {
     void test();
 
     default Object solute(Object... args) {
-        return RunProxy.invoke(this, args);
+        return SolutionProxy.invoke(this, args);
     }
 
 }

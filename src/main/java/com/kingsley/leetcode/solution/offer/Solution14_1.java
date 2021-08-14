@@ -26,26 +26,6 @@ public class Solution14_1 implements Solution {
 
     @SolutionEntry
     public int cuttingRope(int n) {
-        int maxMul = 1;
-        for (int cnt = 2; cnt <= n; cnt++) {
-            int mul;
-            if (n % cnt != 0) {
-                int length;
-                int intL = cnt / n;
-                double doubleL = cnt * 1.0 / n;
-                if (doubleL >= intL + 0.5) {
-                    length = intL + 1;
-                } else {
-                    length = intL;
-                }
-                mul = (int) (Math.pow(length, cnt - 1) * (n - (cnt - 1) * length));
-                log.info("cnt = {}, length = {}", cnt, length);
-            } else {
-                mul = (int) Math.pow(n / cnt, cnt);
-            }
-            log.info(String.valueOf(mul));
-            maxMul = Math.max(maxMul, mul);
-        }
-        return maxMul;
+        return n <= 3 ? n - 1 : (int) (Math.pow(3, n / 3) * 4 / (4 - n % 3));
     }
 }
