@@ -15,7 +15,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.kingsley</groupId>
             <artifactId>color-log</artifactId>
@@ -30,6 +29,13 @@
                     <artifactId>spring-context</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- 网络请求 -->
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
         </dependency>
 
         <dependency>
