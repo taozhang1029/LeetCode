@@ -1,6 +1,5 @@
-package com.kingsley.leetcode.api;
+package com.kingsley.leetcode.util;
 
-import com.kingsley.leetcode.util.SolutionProxy;
 import org.junit.Test;
 
 /**

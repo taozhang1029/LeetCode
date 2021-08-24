@@ -1,6 +1,6 @@
 package com.kingsley.leetcode.solution.leet.No1700_1800;
 
-import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 

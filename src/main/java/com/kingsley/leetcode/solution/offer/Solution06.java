@@ -1,7 +1,7 @@
 package com.kingsley.leetcode.solution.offer;
 
 import com.kingsley.leetcode.api.ListNode;
-import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 

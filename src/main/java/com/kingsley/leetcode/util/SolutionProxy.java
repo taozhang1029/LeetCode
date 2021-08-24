@@ -2,7 +2,6 @@ package com.kingsley.leetcode.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.kingsley.leetcode.api.Solution;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Method;
@@ -27,6 +26,7 @@ public class SolutionProxy {
         if (cnt > 0) {
             log.info("=========================================");
         }
+        // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("LogContext.xml");
         Solution proxyInstance = (Solution) Proxy.newProxyInstance(solution.getClass().getClassLoader(), solution.getClass().getInterfaces(), (proxy, method, params) -> {
             Object result = null;
             String methodName = method.getName();

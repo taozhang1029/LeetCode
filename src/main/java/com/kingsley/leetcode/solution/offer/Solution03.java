@@ -1,6 +1,6 @@
 package com.kingsley.leetcode.solution.offer;
 
-import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
