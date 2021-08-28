@@ -1,7 +1,5 @@
 package com.kingsley.leetcode.api;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @author kingsley
  * @description 并查集api
@@ -10,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
  * @project LeetCode
  * @ide Intellij IDEA
  */
-@Slf4j
 public class UnionFind {
 
     private int count;
@@ -62,7 +59,4 @@ public class UnionFind {
         return count;
     }
 
-    public static void main(String[] args) {
-        log.info("aa");
-    }
 }
