@@ -1,0 +1,10 @@
+log:
+  # 日志文件输出文件夹
+  dir: leetcode-logs
+  # 日志保留天数
+  remain: 365
+  file:
+    # 是否将文件记录到日志
+    use: true
+    # 归档文件日志名称(每月一归档)
+    gz: "%d{yyyy-MM}.log.gz"

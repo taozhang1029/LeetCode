@@ -2,6 +2,7 @@ package com.kingsley.leetcode.solution.leet.No1100_1200;
 
 import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -20,6 +21,7 @@ import java.util.List;
  * 给你树上某一个节点的标号 label，请你返回从根节点到该标号为 label 节点的路径，该路径是由途经的节点标号所组成的。
  * 1 <= label <= 10^6
  */
+@Slf4j
 public class Solution1104 implements Solution {
 
     @SolutionEntry

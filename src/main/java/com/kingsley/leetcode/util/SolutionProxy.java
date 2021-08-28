@@ -26,7 +26,7 @@ public class SolutionProxy {
         if (cnt > 0) {
             log.info("=========================================");
         }
-        // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("LogContext.xml");
+        // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("logContext.xml");
         Solution proxyInstance = (Solution) Proxy.newProxyInstance(solution.getClass().getClassLoader(), solution.getClass().getInterfaces(), (proxy, method, params) -> {
             Object result = null;
             String methodName = method.getName();
@@ -49,7 +49,7 @@ public class SolutionProxy {
                 }
             }
 
-            log.info("执行方法：{}", entry.getName());
+            log.info("执行方法：{}#{}", solution.getClass().getName(), entry.getName());
             Parameter[] parameters = entry.getParameters();
             HashMap<String, Object> map = new HashMap<>();
             boolean existArray = false;
