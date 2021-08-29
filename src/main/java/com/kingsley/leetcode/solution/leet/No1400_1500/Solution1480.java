@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.solution.leet.No1300_1400.No1400_1500;
+package com.kingsley.leetcode.solution.leet.No1400_1500;
 
 import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
