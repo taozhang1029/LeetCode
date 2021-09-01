@@ -9,11 +9,11 @@ import java.lang.annotation.*;
 @Documented
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@SuppressWarnings(value="all")
+@SuppressWarnings("all")
 public @interface SolutionEntry {
 
     boolean useJsonResult() default false;
 
-    boolean countTime() default false;
+    boolean countTime() default true;
 
 }
