@@ -16,4 +16,6 @@ public @interface SolutionEntry {
 
     boolean countTime() default true;
 
+    boolean onlyResult() default false;
+
 }

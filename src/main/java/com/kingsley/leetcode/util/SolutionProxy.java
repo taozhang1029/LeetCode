@@ -20,12 +20,9 @@ import java.util.stream.Collectors;
 @Slf4j
 public class SolutionProxy {
 
-    private static int cnt;
+    private static int cnt = -1;
 
     public static Object invoke(Solution solution, Object... args) {
-        if (cnt > 0) {
-            log.info("=========================================");
-        }
         // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("logContext.xml");
         Solution proxyInstance = (Solution) Proxy.newProxyInstance(solution.getClass().getClassLoader(), solution.getClass().getInterfaces(), (proxy, method, params) -> {
             Object result = null;
@@ -49,7 +46,14 @@ public class SolutionProxy {
                 }
             }
 
-            log.info("执行方法：{}#{}", solution.getClass().getName(), entry.getName());
+            SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
+            boolean onlyResult = annotation.onlyResult();
+            if (!onlyResult) {
+                if (cnt > 0) {
+                    log.info("=========================================");
+                }
+                log.info("执行方法：{}#{}", solution.getClass().getName(), entry.getName());
+            }
             Parameter[] parameters = entry.getParameters();
             HashMap<String, Object> map = new HashMap<>();
             boolean existArray = false;
@@ -73,9 +77,9 @@ public class SolutionProxy {
             if (existArray) {
                 argsInfo = argsInfo.replace("\"[", "").replaceAll("]\"", "");
             }
-            log.info("方法入参：{}", argsInfo);
-
-            SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
+            if (!onlyResult) {
+                log.info("方法入参：{}", argsInfo);
+            }
             long start = System.currentTimeMillis();
             try {
                 result = entry.invoke(solution, args);
@@ -88,7 +92,7 @@ public class SolutionProxy {
                     sb.append(trans2String(result, annotation.useJsonResult()));
                 }
                 log.info(sb.toString());
-                if (annotation.countTime()) {
+                if (!onlyResult && annotation.countTime()) {
                     log.info("运行耗时：{}ms", end - start);
                 }
             } catch (Exception e) {
