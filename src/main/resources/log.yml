@@ -1,6 +1,6 @@
 log:
   # 日志文件输出文件夹
-  dir: leetcode-logs
+  dir: /media/kingsley/Data/Projects/Java/LeetCode/leetcode-logs
   # 日志保留天数
   remain: 365
   file:
