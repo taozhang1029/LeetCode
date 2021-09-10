@@ -1,6 +1,7 @@
 package com.kingsley.leetcode.solution.type;
 
 import com.kingsley.leetcode.util.SolutionType;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @Time 2021/9/7 12:20
@@ -8,10 +9,11 @@ import com.kingsley.leetcode.util.SolutionType;
  * @Project LeetCode
  * @Description
  */
+@Slf4j
 public class DynamicProgramming extends SolutionType {
 
-    {
-        this.solutionType = "动态规划";
+    public DynamicProgramming() {
+        this.type = "动态规划";
     }
 
 }

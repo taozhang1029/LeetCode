@@ -46,6 +46,10 @@ public class SolutionProxy {
                 }
             }
 
+            if (solution instanceof SolutionType) {
+                ((SolutionType) solution).showSolutionType();
+            }
+
             SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
             boolean onlyResult = annotation.onlyResult();
             if (!onlyResult) {

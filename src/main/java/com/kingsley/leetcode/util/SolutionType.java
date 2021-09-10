@@ -1,6 +1,5 @@
 package com.kingsley.leetcode.util;
 
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -9,13 +8,13 @@ import lombok.extern.slf4j.Slf4j;
  * @Project LeetCode
  * @Description
  */
-@Data
 @Slf4j
 public abstract class SolutionType {
 
-    protected String solutionType;
+    protected String type;
 
-    public void showSolutionType() {
-        log.info("当前题型：" + solutionType);
+    protected void showSolutionType() {
+        log.info("当前题型：" + type);
     }
+
 }
