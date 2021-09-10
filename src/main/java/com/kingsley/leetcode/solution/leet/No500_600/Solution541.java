@@ -21,7 +21,7 @@ public class Solution541 implements Solution {
     @Test
     @Override
     public void test() {
-        solute("abcdefg", 2); // bacdfeg
+        solute("abcdefg", 7); // bacdfeg
     }
 
     @SolutionEntry
@@ -30,25 +30,32 @@ public class Solution541 implements Solution {
         if (n == 1) {
             return s;
         }
-        char[] array = s.toCharArray();
-        StringBuilder sb = new StringBuilder();
+        char[] chars = s.toCharArray();
         int curr = 0;
-        while (true) {
-            // TODO
-            if ((curr / k) % 2 == 0) {
-                // 前k个
-                for (int i = curr + k - 1; i >= curr; i--) {
-                    sb.append(array[i]);
+        while (curr < n) {
+            if (curr != 0 && curr % (2 * k) != 0) {
+                reverse(chars, curr - k, curr - 1);
+            }
+            if (curr + k >= n) {
+                if ((curr + k) % (2 * k) != 0) {
+                    reverse(chars, curr, n - 1);
                 }
-            } else {
-
-            }
-            if (curr >= k) {
                 break;
+            } else {
+                curr += k;
             }
-            curr += k;
         }
-        return sb.toString();
+        return new String(chars);
+    }
+
+    private void reverse(char[] chars, int p, int q) {
+        while (p < q) {
+            char c = chars[p];
+            chars[p] = chars[q];
+            chars[q] = c;
+            p++;
+            q--;
+        }
     }
 
 }

@@ -25,7 +25,18 @@ public class Solution45 implements Solution {
 
     @SolutionEntry
     public int jump(int[] nums) {
-        // TODO 待解决
-        return 0;
+        int n = nums.length;
+        int end = 0;  // 上次跳跃可达范围右边界（下次的起跳点）
+        int maxPosition = 0; // 目前能跳到的最远位置
+        int steps = 0; // 跳跃次数
+        for (int i = 0; i < n - 1; i++) {
+            // 记录最大可到达位置
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) { // 到达上次跳跃能到达的右边界了
+                end = maxPosition; // 目前能跳到的最远位置变成了下次起跳位置
+                steps++; // 进入下一次跳跃
+            }
+        }
+        return steps;
     }
 }
