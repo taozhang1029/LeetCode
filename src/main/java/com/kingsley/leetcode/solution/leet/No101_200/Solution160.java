@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
- * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+ * @see <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists">链表相交的起始节点</a>
  * 同题 {@link Solution52#getIntersectionNode(ListNode, ListNode)}
  * <p>
  * 时间复杂度O(n)，空间复杂度O(1)
