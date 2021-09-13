@@ -2,6 +2,7 @@ package com.kingsley.leetcode.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.kingsley.leetcode.type.SolutionType;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Method;
@@ -9,6 +10,7 @@ import java.lang.reflect.Parameter;
 import java.lang.reflect.Proxy;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +27,11 @@ public class SolutionProxy {
     public static Object invoke(Solution solution, Object... args) {
         // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("logContext.xml");
         Solution proxyInstance = (Solution) Proxy.newProxyInstance(solution.getClass().getClassLoader(), solution.getClass().getInterfaces(), (proxy, method, params) -> {
+            if (solution instanceof SolutionType) {
+                ((SolutionType) solution).showSolutionType();
+            } else {
+                log.info("当前题型：未知类型");
+            }
             Object result = null;
             String methodName = method.getName();
             Method entry = method;
@@ -33,21 +40,21 @@ public class SolutionProxy {
                     m.setAccessible(true);
                     return m.isAnnotationPresent(SolutionEntry.class);
                 }).collect(Collectors.toList());
+
                 if (methods.isEmpty()) {
                     log.error("没有找到入口方法，请在入口方法添加 @SolutionEntry 注解！");
+                    return null;
                 } else if (methods.size() > 1) {
-                    log.error("存在多个入口方法，请检查！");
+                    log.info("存在多个入口方法，按优先级选取");
+                    methods.sort(Comparator.comparingInt(m -> m.getAnnotation(SolutionEntry.class).priority()));
                 }
+
                 entry = methods.get(0);
                 int parameterCount = entry.getParameterCount();
                 if (parameterCount != args.length) {
                     log.error("入口方法实际参数列表和形式参数列表长度不一致！");
                     return null;
                 }
-            }
-
-            if (solution instanceof SolutionType) {
-                ((SolutionType) solution).showSolutionType();
             }
 
             SolutionEntry annotation = entry.getAnnotation(SolutionEntry.class);
@@ -58,6 +65,7 @@ public class SolutionProxy {
                 }
                 log.info("执行方法：{}#{}", solution.getClass().getName(), entry.getName());
             }
+
             Parameter[] parameters = entry.getParameters();
             HashMap<String, Object> map = new HashMap<>();
             boolean existArray = false;

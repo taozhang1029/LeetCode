@@ -18,4 +18,7 @@ public @interface SolutionEntry {
 
     boolean onlyResult() default false;
 
+    // 优先级
+    int priority() default 0;
+
 }

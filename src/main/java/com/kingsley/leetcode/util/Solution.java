@@ -12,4 +12,8 @@ public interface Solution {
         return SolutionProxy.invoke(this, args);
     }
 
+    default Object solute(Object arg) {
+        return solute(new Object[]{arg});
+    }
+
 }
