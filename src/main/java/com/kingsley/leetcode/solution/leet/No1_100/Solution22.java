@@ -1,7 +1,6 @@
 package com.kingsley.leetcode.solution.leet.No1_100;
 
 import com.kingsley.leetcode.type.DynamicProgramming;
-import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 
@@ -15,7 +14,7 @@ import java.util.List;
  * @Description 动态规划
  * @see <a href="https://leetcode-cn.com/problems/generate-parentheses/">22. 括号生成</a>
  */
-public class Solution22 extends DynamicProgramming implements Solution {
+public class Solution22 implements DynamicProgramming {
 
     @Test
     @Override

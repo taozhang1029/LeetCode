@@ -1,5 +1,7 @@
 package com.kingsley.leetcode.util;
 
+import org.springframework.core.annotation.AliasFor;
+
 import java.lang.annotation.*;
 
 /**
@@ -7,18 +9,26 @@ import java.lang.annotation.*;
  * Created by zhangtao1029 on 2021/7/15.
  */
 @Documented
-@Target(ElementType.METHOD)
+@Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @SuppressWarnings("all")
 public @interface SolutionEntry {
 
     boolean useJsonResult() default false;
 
-    boolean countTime() default true;
+    boolean countTime() default false;
 
     boolean onlyResult() default false;
 
     // 优先级
     int priority() default 0;
+
+    @AliasFor("value")
+    String solutionName() default "";
+
+    @AliasFor("solutionName")
+    String value() default "";
+
+    String requirements() default "";
 
 }

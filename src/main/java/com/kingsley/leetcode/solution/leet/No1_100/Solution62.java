@@ -1,7 +1,6 @@
 package com.kingsley.leetcode.solution.leet.No1_100;
 
 import com.kingsley.leetcode.type.DynamicProgramming;
-import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import org.junit.Test;
  * @Description 动态规划
  * @see <a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a>
  */
-public class Solution62 extends DynamicProgramming implements Solution {
+public class Solution62 implements DynamicProgramming {
 
     @Test
     @Override

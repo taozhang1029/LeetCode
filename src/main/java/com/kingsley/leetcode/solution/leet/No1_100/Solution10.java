@@ -1,7 +1,6 @@
 package com.kingsley.leetcode.solution.leet.No1_100;
 
 import com.kingsley.leetcode.type.DynamicProgramming;
-import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 
@@ -12,7 +11,8 @@ import org.junit.Test;
  * @Description 动态规划
  * <a href="https://leetcode-cn.com/problems/regular-expression-matching/">10. 正则表达式匹配</a>
  */
-public class Solution10 extends DynamicProgramming implements Solution {
+
+public class Solution10 implements DynamicProgramming {
 
     @Test
     @Override
@@ -20,7 +20,7 @@ public class Solution10 extends DynamicProgramming implements Solution {
         solute("aab", "c*a*b*");
     }
 
-    @SolutionEntry
+    @SolutionEntry("正则表达式匹配")
     public boolean isMatch(String s, String p) {
         boolean[][] table = new boolean[s.length() + 1][p.length() + 1];
         table[0][0] = true;
@@ -61,4 +61,5 @@ public class Solution10 extends DynamicProgramming implements Solution {
         boolean[] lastRow = table[table.length - 1];
         return lastRow[lastRow.length - 1];
     }
+
 }

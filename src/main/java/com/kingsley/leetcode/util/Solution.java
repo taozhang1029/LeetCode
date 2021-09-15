@@ -16,11 +16,4 @@ public interface Solution {
         return solute(new Object[]{arg});
     }
 
-    default Object solute(int[] arg) {
-        return solute(new Object[]{arg});
-    }
-
-    default Object solute(int[][] arg) {
-        return solute(new Object[]{arg});
-    }
 }
