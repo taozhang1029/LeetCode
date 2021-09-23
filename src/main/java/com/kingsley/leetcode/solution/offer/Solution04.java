@@ -12,7 +12,7 @@ import org.junit.Test;
  * 0 <= m <= 1000
  * Created by zhangtao552 on 2021/7/21.
  */
-public class Solution04 implements Solution {
+public class Solution04 extends Solution {
 
     @Test
     @Override

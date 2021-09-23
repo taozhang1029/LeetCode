@@ -14,7 +14,7 @@ import java.util.List;
  * @Description
  * @see <a href="https://leetcode-cn.com/problems/text-justification/">68. 文本左右对齐</a>
  */
-public class Solution68 implements Solution {
+public class Solution68 extends Solution {
 
     @Test
     @Override

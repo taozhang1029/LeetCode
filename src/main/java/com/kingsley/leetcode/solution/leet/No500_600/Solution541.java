@@ -16,7 +16,7 @@ import org.junit.Test;
  * s 仅由小写英文组成
  * 1 <= k <= 104
  */
-public class Solution541 implements Solution {
+public class Solution541 extends Solution {
 
     @Test
     @Override

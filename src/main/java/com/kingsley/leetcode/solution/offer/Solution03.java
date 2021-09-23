@@ -16,7 +16,7 @@ import java.util.HashSet;
  * Created by zhangtao552 on 2021/7/21.
  */
 @Slf4j
-public class Solution03 implements Solution {
+public class Solution03 extends Solution {
 
     @SolutionEntry
     public int findRepeatNumber(int[] nums) {

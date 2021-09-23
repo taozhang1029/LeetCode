@@ -15,7 +15,7 @@ import org.junit.Test;
  * 请你返回一个长度为 n 的数组 answer，其中 answer[i] 是航班 i 上预订的座位总数。
  * <img src="../../../../../../../resources/image/leet1109.png"/>
  */
-public class Solution1109 implements Solution {
+public class Solution1109 extends Solution {
 
     @Test
     @Override

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.InvocationHandler;
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class SolutionProxy {
 
-    private static int cnt = -1;
+    private static int cnt = 0;
     private static Solution sol;
     private static Object[] args;
 
@@ -31,7 +32,7 @@ public class SolutionProxy {
 
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(Solution.class);
-        enhancer.setCallback(new SolutionInvocationHandler());
+        enhancer.setCallback(new SolutionInvocationHandler(solution));
         Solution proxy = (Solution) enhancer.create();
 
         return proxy.solute(args);
@@ -45,6 +46,12 @@ public class SolutionProxy {
     }
 
     private static class SolutionInvocationHandler implements InvocationHandler {
+
+        private Solution solution;
+
+        public SolutionInvocationHandler(Solution solution) {
+            this.solution = solution;
+        }
 
         @Override
         public Object invoke(Object obj, Method method, Object[] params) {
@@ -70,49 +77,57 @@ public class SolutionProxy {
                 return null;
             }
 
-            SolutionEntry annotation = AnnotationUtils.getAnnotation(entry, SolutionEntry.class);
-            if (annotation == null) {
+            SolutionEntry entryAnnotation = AnnotationUtils.getAnnotation(entry, SolutionEntry.class);
+            if (entryAnnotation == null) {
                 return null;
             }
-            String solutionName = annotation.solutionName();
-            log.info("题目名称：{}", "".equals(solutionName) ? "未知" : solutionName);
 
-            Set<Class<?>> classes = Arrays.stream(sol.getClass().getInterfaces()).filter(clazz -> clazz != Solution.class).collect(Collectors.toSet());
-            String type = "未知";
-            if (!classes.isEmpty()) {
-                StringBuilder types = new StringBuilder();
-                boolean isFirst = true;
-                for (Class<?> clazz : classes) {
-                    try {
-                        if (!isFirst) {
-                            types.append("、");
+            boolean onlyResult = entryAnnotation.onlyResult();
+
+            SolutionInfo solutionInfo = solution.getClass().getAnnotation(SolutionInfo.class);
+
+            String solutionName = solutionInfo.solutionName();
+            String requirements = solutionInfo.requirements();
+            if (cnt == 0) {
+                log.info("题目名称：{}", "".equals(solutionName) ? "未知" : solutionName);
+            }
+
+            if (cnt == 0) {
+                Set<Class<?>> classes = Arrays.stream(sol.getClass().getInterfaces()).collect(Collectors.toSet());
+                String type = "未知";
+                if (!classes.isEmpty()) {
+                    StringBuilder types = new StringBuilder();
+                    boolean isFirst = true;
+                    for (Class<?> clazz : classes) {
+                        try {
+                            if (!isFirst) {
+                                types.append("、");
+                            }
+                            isFirst = false;
+                            types.append((String) clazz.getDeclaredField("type").get(sol));
+                        } catch (NoSuchFieldException | IllegalAccessException e) {
+                            e.printStackTrace();
                         }
-                        isFirst = false;
-                        types.append((String) clazz.getDeclaredField("type").get(sol));
-                    } catch (NoSuchFieldException | IllegalAccessException e) {
-                        e.printStackTrace();
                     }
+                    type = types.toString();
                 }
-                type = types.toString();
+                log.info("题目类型：{}", type);
+
+                if (!StringUtils.isEmpty(requirements)) {
+                    log.info("附加要求：{}", requirements);
+                }
+
+                if (methods.size() > 1) {
+                    log.info("存在多个入口方法，按优先级选取");
+                }
+
+                if (!onlyResult) {
+                    log.info("执行方法：{}#{}", sol.getClass().getName(), entry.getName());
+                }
             }
 
-            log.info("题目类型：{}", type);
-
-            String requirements = annotation.requirements();
-            if (!"".equals(requirements)) {
-                log.info("附加要求：{}", requirements);
-            }
-
-            if (methods.size() > 1) {
-                log.info("存在多个入口方法，按优先级选取");
-            }
-
-            boolean onlyResult = annotation.onlyResult();
             if (!onlyResult) {
-                if (cnt > 0) {
-                    log.info("=========================================");
-                }
-                log.info("执行方法：{}#{}", sol.getClass().getName(), entry.getName());
+                log.info("********************* 测试" + (cnt + 1) + " ********************");
             }
 
             Parameter[] parameters = entry.getParameters();
@@ -150,10 +165,10 @@ public class SolutionProxy {
                 if (result == null) {
                     sb.append("null");
                 } else {
-                    sb.append(trans2String(result, annotation.useJsonResult()));
+                    sb.append(trans2String(result, entryAnnotation.useJsonResult()));
                 }
                 log.info(sb.toString());
-                if (!onlyResult && annotation.countTime()) {
+                if (!onlyResult && entryAnnotation.countTime()) {
                     log.info("运行耗时：{}ms", end - start);
                 }
             } catch (Exception e) {

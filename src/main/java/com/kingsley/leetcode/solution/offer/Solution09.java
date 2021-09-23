@@ -15,7 +15,7 @@ import java.util.Stack;
  * Created by zhangtao552 on 2021/7/21.
  */
 @Slf4j
-public class Solution09 implements Solution {
+public class Solution09 extends Solution {
 
     private Stack<Integer> stackIn;
 

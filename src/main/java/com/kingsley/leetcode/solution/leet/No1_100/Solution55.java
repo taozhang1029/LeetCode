@@ -17,7 +17,7 @@ import java.util.Arrays;
  * 1 <= nums.length <= 3 * 10^4
  * 0 <= nums[i] <= 10^5
  */
-public class Solution55 implements Solution {
+public class Solution55 extends Solution {
 
     @Test
     @Override

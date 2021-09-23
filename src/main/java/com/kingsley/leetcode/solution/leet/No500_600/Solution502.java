@@ -15,7 +15,7 @@ import java.util.PriorityQueue;
  * @Description 502. IPO
  * @see <a href="https://leetcode-cn.com/problems/ipo/">502. IPO</a>
  */
-public class Solution502 implements Solution {
+public class Solution502 extends Solution {
 
     private int result;
 

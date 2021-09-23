@@ -14,7 +14,7 @@ import org.junit.Test;
  * https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/submissions/
  * Created by zhangtao552 on 2021/7/21.
  */
-public class Solution10_1 implements Solution {
+public class Solution10_1 extends Solution {
 
     @Test
     @Override

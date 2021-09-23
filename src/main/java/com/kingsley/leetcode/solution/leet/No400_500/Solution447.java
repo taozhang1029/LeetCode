@@ -14,7 +14,7 @@ import java.util.HashMap;
  * @Description 每日一题
  * @see <a href="https://leetcode-cn.com/problems/number-of-boomerangs/">447. 回旋镖的数量</a>
  */
-public class Solution447 implements Solution {
+public class Solution447 extends Solution {
 
     @Test
     @Override

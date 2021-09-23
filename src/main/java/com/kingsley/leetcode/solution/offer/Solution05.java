@@ -9,7 +9,7 @@ import org.junit.Test;
  * 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
  * Created by zhangtao552 on 2021/7/23.
  */
-public class Solution05 implements Solution {
+public class Solution05 extends Solution {
 
     @Test
     @Override

@@ -22,7 +22,7 @@ import java.util.PriorityQueue;
  * 1 <= k <= m
  * matrix[i][j] 不是 0 就是 1
  */
-public class Solution1337 implements Solution {
+public class Solution1337 extends Solution {
 
     @Test
     @Override

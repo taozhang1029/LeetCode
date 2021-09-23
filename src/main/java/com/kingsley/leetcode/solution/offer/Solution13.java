@@ -13,7 +13,7 @@ import org.junit.Test;
  * <img src="../../../../../../resources/image/offer13.png"/>
  */
 @Slf4j
-public class Solution13 implements Solution {
+public class Solution13 extends Solution {
 
     private int grids = 0;
 

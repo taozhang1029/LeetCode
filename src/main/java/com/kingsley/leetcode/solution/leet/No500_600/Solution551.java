@@ -18,7 +18,7 @@ import org.junit.Test;
  * 2. 学生 不会 存在 连续 3 天或 3 天以上的迟到（'L'）记录。
  * 如果学生可以获得出勤奖励，返回 true ；否则，返回 false 。
  */
-public class Solution551 implements Solution {
+public class Solution551 extends Solution {
     @Test
     @Override
     public void test() {

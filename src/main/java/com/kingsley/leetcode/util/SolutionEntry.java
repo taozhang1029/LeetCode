@@ -23,12 +23,4 @@ public @interface SolutionEntry {
     // 优先级
     int priority() default 0;
 
-    @AliasFor("value")
-    String solutionName() default "";
-
-    @AliasFor("solutionName")
-    String value() default "";
-
-    String requirements() default "";
-
 }

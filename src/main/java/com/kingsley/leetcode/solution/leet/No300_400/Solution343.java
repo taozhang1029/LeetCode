@@ -12,7 +12,7 @@ import org.junit.Test;
  * 给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
  * 本题与{@linkplain com.kingsley.leetcode.solution.offer.Solution14_1 剑指Offer14-I.剪绳子} 相同
  */
-public class Solution343 implements Solution {
+public class Solution343 extends Solution {
 
     @SolutionEntry
     public int integerBreak(int n) {

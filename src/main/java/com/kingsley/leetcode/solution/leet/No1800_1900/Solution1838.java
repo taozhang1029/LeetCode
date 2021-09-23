@@ -15,7 +15,7 @@ import java.util.Arrays;
  * <p>
  * Created by zhangtao552 on 2021/7/19.
  */
-public class Solution1838 implements Solution {
+public class Solution1838 extends Solution {
 
 
     /**

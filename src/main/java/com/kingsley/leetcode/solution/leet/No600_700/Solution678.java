@@ -15,7 +15,7 @@ import java.util.LinkedList;
  * @Description 每日一题
  * @see <a href="https://leetcode-cn.com/problems/valid-parenthesis-string/">678. 有效的括号字符串</a>
  */
-public class Solution678 implements Solution {
+public class Solution678 extends Solution {
 
     @Test
     @Override

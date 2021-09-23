@@ -19,7 +19,7 @@ import java.util.LinkedList;
  * 1 <= left <= right <= 50
  * Created by zhangtao552 on 2021/7/23.
  */
-public class Solution1893 implements Solution {
+public class Solution1893 extends Solution {
 
     @Test
     @Override

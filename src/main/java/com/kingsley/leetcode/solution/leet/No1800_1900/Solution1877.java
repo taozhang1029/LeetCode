@@ -20,7 +20,7 @@ import java.util.Arrays;
  * <p>
  * Created by zhangtao552 on 2021/7/20.
  */
-public class Solution1877 implements Solution {
+public class Solution1877 extends Solution {
 
     @Test
     @Override

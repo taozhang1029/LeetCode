@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
  * Created by zhangtao552 on 2021/7/21.
  */
 @Component
-public class Solution160 implements Solution {
+public class Solution160 extends Solution {
 
     @Test
     @Override

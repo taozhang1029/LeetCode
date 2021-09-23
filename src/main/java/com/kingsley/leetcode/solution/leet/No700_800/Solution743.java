@@ -24,7 +24,7 @@ import java.util.Arrays;
  * 0 <= wi <= 100
  * 所有 (ui, vi) 对都 互不相同（即，不含重复边）
  */
-public class Solution743 implements Solution {
+public class Solution743 extends Solution {
 
     @Test
     @Override

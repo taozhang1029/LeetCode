@@ -16,7 +16,7 @@ import org.junit.Test;
  * 1 <= text1.length, text2.length <= 1000
  * text1 和 text2 仅由小写英文字符组成。
  */
-public class Solution1143 implements Solution {
+public class Solution1143 extends Solution {
     @Test
     @Override
     public void test() {

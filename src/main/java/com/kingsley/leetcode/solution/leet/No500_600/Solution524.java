@@ -2,6 +2,7 @@ package com.kingsley.leetcode.solution.leet.No500_600;
 
 import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
+import com.kingsley.leetcode.util.SolutionInfo;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -14,7 +15,8 @@ import java.util.List;
  * @Description 每日一题
  * @see <a href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">524. 通过删除字母匹配到字典里最长单词</a>
  */
-public class Solution524 implements Solution {
+@SolutionInfo(solutionName = "通过删除字母匹配到字典里最长单词")
+public class Solution524 extends Solution {
 
     @Test
     @Override
@@ -22,7 +24,7 @@ public class Solution524 implements Solution {
         solute("abpcplea", Arrays.asList("ale", "apple", "monkey", "plea"));
     }
 
-    @SolutionEntry(solutionName = "通过删除字母匹配到字典里最长单词")
+    @SolutionEntry
     public String findLongestWord(String s, List<String> dictionary) {
         dictionary.sort((s1, s2) -> {
             if (s1.length() != s2.length()) {

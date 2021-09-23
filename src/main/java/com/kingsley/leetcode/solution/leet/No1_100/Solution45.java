@@ -14,7 +14,7 @@ import org.junit.Test;
  * 你的目标是使用最少的跳跃次数到达数组的最后一个位置。
  * 假设你总是可以到达数组的最后一个位置。
  */
-public class Solution45 implements Solution {
+public class Solution45 extends Solution {
 
     @Test
     @Override

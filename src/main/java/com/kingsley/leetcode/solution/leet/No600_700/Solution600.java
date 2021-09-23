@@ -11,7 +11,7 @@ import org.junit.Test;
  * @Description 每日一题
  * @see <a href="https://leetcode-cn.com/problems/non-negative-integers-without-consecutive-ones/">600. 不含连续1的非负整数</a>
  */
-public class Solution600 implements Solution {
+public class Solution600 extends Solution {
 
     private int result = 1;
 

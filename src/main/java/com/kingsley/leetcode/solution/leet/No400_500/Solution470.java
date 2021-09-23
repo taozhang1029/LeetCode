@@ -5,6 +5,8 @@ import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 
+import java.util.Random;
+
 /**
  * @Time 2021/9/5 11:29
  * @Author Kingsley
@@ -12,12 +14,17 @@ import org.junit.Test;
  * @Description 每日一题
  * @see <a href="https://leetcode-cn.com/problems/implement-rand10-using-rand7/">470. 用 Rand7() 实现 Rand10()</a>
  */
-public class Solution470 extends SolBase implements Solution {
+public class Solution470 extends Solution {
 
     @Test
     @Override
     public void test() {
         solute();
+    }
+
+    public int rand7() {
+        Random random = new Random();
+        return random.nextInt(7) + 1;
     }
 
     @SolutionEntry

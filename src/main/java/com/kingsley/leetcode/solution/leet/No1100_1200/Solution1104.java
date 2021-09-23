@@ -22,7 +22,7 @@ import java.util.List;
  * 1 <= label <= 10^6
  */
 @Slf4j
-public class Solution1104 implements Solution {
+public class Solution1104 extends Solution {
 
     @SolutionEntry
     public List<Integer> pathInZigZagTree(int label) {

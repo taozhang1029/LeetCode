@@ -20,7 +20,7 @@ import java.util.PriorityQueue;
  * 1 <= Node.val <= 2^31 - 1
  * 对于树中每个节点 root.val == min(root.left.val, root.right.val)
  */
-public class Solution671 implements Solution {
+public class Solution671 extends Solution {
 
     private PriorityQueue<Integer> queue;
 

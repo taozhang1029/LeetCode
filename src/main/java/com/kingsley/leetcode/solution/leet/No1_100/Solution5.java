@@ -12,7 +12,7 @@ import org.junit.Test;
  * @Description 动态规划
  * @see <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/">5. 最长回文子串</a>
  */
-public class Solution5 implements DynamicProgramming {
+public class Solution5 extends Solution implements DynamicProgramming {
 
     @Test
     @Override

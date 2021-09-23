@@ -13,7 +13,7 @@ import java.util.LinkedList;
  * 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
  * Created by zhangtao552 on 2021/7/23.
  */
-public class Solution06 implements Solution {
+public class Solution06 extends Solution {
 
     @Test
     @Override

@@ -8,7 +8,7 @@ import com.kingsley.leetcode.util.Solution;
  * @Project LeetCode
  * @Description
  */
-public interface DepthFirstSearch extends Solution {
+public interface DepthFirstSearch {
 
     String type = "深度优先搜索";
 

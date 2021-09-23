@@ -17,7 +17,7 @@ import java.util.*;
  * 也就是说，选取下标 i 的概率为 w[i] / sum(w) 。
  */
 @Slf4j
-public class Solution528 implements Solution {
+public class Solution528 extends Solution {
 
     @Test
     @Override

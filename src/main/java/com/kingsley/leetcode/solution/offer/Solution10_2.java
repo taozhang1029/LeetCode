@@ -13,7 +13,7 @@ import org.junit.Test;
  * https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/
  * Created by zhangtao552 on 2021/7/21.
  */
-public class Solution10_2 implements Solution {
+public class Solution10_2 extends Solution {
 
     @Test
     @Override

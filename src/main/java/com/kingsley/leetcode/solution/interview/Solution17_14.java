@@ -15,7 +15,7 @@ import java.util.PriorityQueue;
  * @see <a href="https://leetcode-cn.com/problems/smallest-k-lcci/">面试题 17.14. 最小K个数</a>
  * 设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
  */
-public class Solution17_14 implements Solution {
+public class Solution17_14 extends Solution {
 
     @Test
     @Override

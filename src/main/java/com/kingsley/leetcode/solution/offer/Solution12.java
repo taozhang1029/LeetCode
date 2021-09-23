@@ -15,7 +15,7 @@ import java.util.Arrays;
  * board 和 word 仅由大小写英文字母组成
  * Created by zhangtao552 on 2021/7/22.
  */
-public class Solution12 implements Solution {
+public class Solution12 extends Solution {
 
     @Test
     @Override

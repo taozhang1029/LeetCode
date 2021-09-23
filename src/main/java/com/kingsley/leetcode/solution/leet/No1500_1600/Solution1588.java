@@ -17,7 +17,7 @@ import java.util.Arrays;
  * 请你返回 arr 中所有奇数长度子数组的和 。
  * <img src="../../../../../../../resources/image/leet1588.png"/>
  */
-public class Solution1588 implements Solution {
+public class Solution1588 extends Solution {
     @Test
     @Override
     public void test() {

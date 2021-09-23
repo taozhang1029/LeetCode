@@ -13,7 +13,7 @@ import org.junit.Test;
  * <img src="../../../../../../resources/image/offer14_1.png" alt="路径错误"/>
  */
 @Slf4j
-public class Solution14_1 implements Solution {
+public class Solution14_1 extends Solution {
 
     @Test
     @Override

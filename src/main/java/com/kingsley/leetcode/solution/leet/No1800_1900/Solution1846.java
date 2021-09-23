@@ -11,7 +11,7 @@ import java.util.Arrays;
  * <p>
  * Created by zhangtao1029 on 2021/7/15.
  */
-public class Solution1846 implements Solution {
+public class Solution1846 extends Solution {
 
     @SolutionEntry
     public int maximumElementAfterDecrementingAndRearranging(int[] arr) {

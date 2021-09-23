@@ -22,7 +22,7 @@ import org.junit.Test;
  * columnTitle 在范围 ["A", "FXSHRXW"] 内
  * @see <a href="https://leetcode-cn.com/problems/excel-sheet-column-number/">171. Excel表列序号</a>
  */
-public class Solution171 implements Solution {
+public class Solution171 extends Solution {
 
     @Test
     @Override

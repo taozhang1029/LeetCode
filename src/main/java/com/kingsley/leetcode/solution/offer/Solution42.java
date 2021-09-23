@@ -12,7 +12,7 @@ import org.junit.Test;
  * <p>
  * Created by zhangtao552 on 2021/7/20.
  */
-public class Solution42 implements Solution {
+public class Solution42 extends Solution {
     @Test
     @Override
     public void test() {

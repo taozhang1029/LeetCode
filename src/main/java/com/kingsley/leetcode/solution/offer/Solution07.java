@@ -13,7 +13,7 @@ import java.util.HashMap;
  * 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
  * Created by zhangtao552 on 2021/7/23.
  */
-public class Solution07 implements Solution {
+public class Solution07 extends Solution {
 
     @Test
     @Override

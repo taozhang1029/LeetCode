@@ -20,7 +20,7 @@ import org.junit.Test;
  * 如果 version1 < version2 返回 -1，
  * 除此之外返回 0。
  */
-public class Solution165 implements Solution {
+public class Solution165 extends Solution {
 
     @Test
     @Override

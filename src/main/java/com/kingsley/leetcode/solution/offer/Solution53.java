@@ -14,7 +14,7 @@ import org.junit.Test;
  * 两次二分查找
  * 统计一个数字在排序数组中出现的次数。
  */
-public class Solution53 implements Solution {
+public class Solution53 extends Solution {
 
     @Test
     @Override

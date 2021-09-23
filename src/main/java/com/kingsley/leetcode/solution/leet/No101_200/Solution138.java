@@ -30,7 +30,7 @@ import java.util.HashMap;
  * <p>
  * Created by zhangtao552 on 2021/7/22.每日一题
  */
-public class Solution138 implements Solution {
+public class Solution138 extends Solution {
 
     @Test
     @Override

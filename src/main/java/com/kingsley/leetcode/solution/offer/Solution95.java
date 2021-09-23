@@ -19,7 +19,7 @@ import org.junit.Test;
  * text1 和 text2 仅由小写英文字符组成。
  * 注意：本题与主站 1143 题相同： https://leetcode-cn.com/problems/longest-common-subsequence/
  */
-public class Solution95 implements Solution {
+public class Solution95 extends Solution {
     @Test
     @Override
     public void test() {

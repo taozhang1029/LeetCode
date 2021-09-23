@@ -1,6 +1,7 @@
 package com.kingsley.leetcode.solution.leet.No1_100;
 
 import com.kingsley.leetcode.type.DynamicProgramming;
+import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ import org.junit.Test;
  * @Description 动态规划
  * @see <a href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a>
  */
-public class Solution53 implements DynamicProgramming {
+public class Solution53 extends Solution implements DynamicProgramming{
 
     @Test
     @Override

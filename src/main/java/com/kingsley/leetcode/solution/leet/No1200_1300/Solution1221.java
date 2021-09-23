@@ -11,7 +11,7 @@ import org.junit.Test;
  * @Description 每日一题
  * @see <a href="https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/">分割平衡字符串</a>
  */
-public class Solution1221 implements Solution {
+public class Solution1221 extends Solution {
 
     @Test
     @Override

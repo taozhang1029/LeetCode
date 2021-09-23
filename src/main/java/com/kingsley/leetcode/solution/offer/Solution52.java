@@ -17,7 +17,7 @@ import org.junit.Test;
  * <p>
  * Created by zhangtao552 on 2021/7/21.
  */
-public class Solution52 extends Solution160 implements Solution {
+public class Solution52 extends Solution160 {
 
     @Test
     @Override

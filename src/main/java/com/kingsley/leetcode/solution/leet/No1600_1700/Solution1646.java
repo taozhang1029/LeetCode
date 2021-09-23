@@ -55,7 +55,7 @@ import org.junit.Test;
  * 因此，nums = [0,1,1,2,1,3,2,3]，最大值 3
  * </p>
  */
-public class Solution1646 implements Solution {
+public class Solution1646 extends Solution {
 
     private int[] mem;
 

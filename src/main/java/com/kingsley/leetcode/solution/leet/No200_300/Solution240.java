@@ -20,7 +20,7 @@ import org.junit.Test;
  * 每列的所有元素从上到下升序排列
  * -10^9 <= target <= 10^9
  */
-public class Solution240 implements Solution {
+public class Solution240 extends Solution {
 
     @Test
     @Override
