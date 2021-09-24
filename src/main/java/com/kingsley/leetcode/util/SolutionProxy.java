@@ -86,7 +86,7 @@ public class SolutionProxy {
 
             SolutionInfo solutionInfo = solution.getClass().getAnnotation(SolutionInfo.class);
 
-            String solutionName = solutionInfo.solutionName();
+            String solutionName = (String) AnnotationUtils.getValue(solutionInfo,"value");
             String requirements = solutionInfo.requirements();
             if (cnt == 0) {
                 log.info("题目名称：{}", "".equals(solutionName) ? "未知" : solutionName);

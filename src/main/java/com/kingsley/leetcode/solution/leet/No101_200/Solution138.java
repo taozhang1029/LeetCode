@@ -1,6 +1,5 @@
 package com.kingsley.leetcode.solution.leet.No101_200;
 
-import com.kingsley.leetcode.api.Node;
 import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;
@@ -92,3 +91,31 @@ public class Solution138 extends Solution {
     }
 
 }
+
+class Node {
+
+    public int val;
+    public Node next;
+    public Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Node{");
+        Node tmp = this;
+        while (tmp != null) {
+            sb.append("[").append(tmp.val).append(", ").append(tmp.random == null ? "null" : tmp.random.val).append("], ");
+            tmp = tmp.next;
+        }
+        int length = sb.length();
+        sb.delete(length - 2, length).append("}");
+
+        return sb.toString();
+    }
+}
+
