@@ -1,6 +1,6 @@
 package com.kingsley.leetcode.solution.offer;
 
-import com.kingsley.leetcode.solution.leet.No1100_1200.Solution1143;
+import com.kingsley.leetcode.solution.leet.No1101_1200.Solution1143;
 import com.kingsley.leetcode.util.Solution;
 import com.kingsley.leetcode.util.SolutionEntry;
 import org.junit.Test;

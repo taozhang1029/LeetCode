@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 运行工具类
+ * 代理类
  * Created by zhangtao1029 on 2021/7/15.
  */
 @Slf4j
@@ -86,7 +86,10 @@ public class SolutionProxy {
 
             SolutionInfo solutionInfo = solution.getClass().getAnnotation(SolutionInfo.class);
 
-            String solutionName = (String) AnnotationUtils.getValue(solutionInfo,"value");
+            String solutionName = (String) AnnotationUtils.getValue(solutionInfo, "value");
+            if (solutionName == null) {
+                solutionName = (String) AnnotationUtils.getValue(solutionInfo, "solutionName");
+            }
             String requirements = solutionInfo.requirements();
             if (cnt == 0) {
                 log.info("题目名称：{}", "".equals(solutionName) ? "未知" : solutionName);

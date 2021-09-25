@@ -7,7 +7,7 @@ package com.kingsley.leetcode.util;
 @SolutionInfo
 public abstract class Solution {
 
-    protected abstract void test();
+    public abstract void test();
 
     protected Object solute(Object... args) {
         return SolutionProxy.invoke(this, args);
