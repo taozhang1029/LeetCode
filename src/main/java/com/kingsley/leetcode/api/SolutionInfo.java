@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.util;
+package com.kingsley.leetcode.api;
 
 import org.springframework.core.annotation.AliasFor;
 

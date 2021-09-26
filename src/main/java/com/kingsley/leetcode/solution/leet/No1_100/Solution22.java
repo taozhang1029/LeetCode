@@ -1,8 +1,8 @@
 package com.kingsley.leetcode.solution.leet.No1_100;
 
 import com.kingsley.leetcode.type.DynamicProgramming;
-import com.kingsley.leetcode.util.Solution;
-import com.kingsley.leetcode.util.SolutionEntry;
+import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.api.SolutionEntry;
 import org.junit.Test;
 
 import java.util.ArrayList;

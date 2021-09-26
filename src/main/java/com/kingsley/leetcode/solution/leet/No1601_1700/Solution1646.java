@@ -1,7 +1,7 @@
 package com.kingsley.leetcode.solution.leet.No1601_1700;
 
-import com.kingsley.leetcode.util.Solution;
-import com.kingsley.leetcode.util.SolutionEntry;
+import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.api.SolutionEntry;
 import org.junit.Test;
 
 /**

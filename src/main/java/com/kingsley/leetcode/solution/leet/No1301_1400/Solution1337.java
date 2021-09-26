@@ -1,7 +1,7 @@
 package com.kingsley.leetcode.solution.leet.No1301_1400;
 
-import com.kingsley.leetcode.util.Solution;
-import com.kingsley.leetcode.util.SolutionEntry;
+import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.api.SolutionEntry;
 import lombok.Data;
 import org.junit.Test;
 

@@ -1,8 +1,8 @@
 package com.kingsley.leetcode.solution.leet.No401_500;
 
-import com.kingsley.leetcode.util.Solution;
-import com.kingsley.leetcode.util.SolutionEntry;
-import com.kingsley.leetcode.util.SolutionInfo;
+import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.api.SolutionEntry;
+import com.kingsley.leetcode.api.SolutionInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

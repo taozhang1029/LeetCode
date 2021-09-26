@@ -1,7 +1,7 @@
 package com.kingsley.leetcode.solution.leet.No1801_1900;
 
-import com.kingsley.leetcode.util.Solution;
-import com.kingsley.leetcode.util.SolutionEntry;
+import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.api.SolutionEntry;
 import org.junit.Test;
 
 import java.util.Arrays;

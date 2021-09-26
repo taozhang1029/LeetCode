@@ -1,9 +1,9 @@
 package com.kingsley.leetcode.solution.leet.No101_200;
 
-import com.kingsley.leetcode.api.ListNode;
+import com.kingsley.leetcode.entity.ListNode;
 import com.kingsley.leetcode.solution.offer.Solution52;
-import com.kingsley.leetcode.util.Solution;
-import com.kingsley.leetcode.util.SolutionEntry;
+import com.kingsley.leetcode.api.Solution;
+import com.kingsley.leetcode.api.SolutionEntry;
 import org.junit.Test;
 import org.springframework.stereotype.Component;
 

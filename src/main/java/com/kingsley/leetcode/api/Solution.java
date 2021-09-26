@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.util;
+package com.kingsley.leetcode.api;
 
 /**
  * 解决方案模板
