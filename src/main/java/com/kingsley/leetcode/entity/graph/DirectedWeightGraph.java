@@ -1,7 +1,9 @@
 package com.kingsley.leetcode.entity.graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author: zhangtao552
@@ -61,5 +63,20 @@ public class DirectedWeightGraph {
             s.append("\n");
         }
         return s.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DirectedWeightGraph that = (DirectedWeightGraph) o;
+        return pointNum == that.pointNum && edgeNum == that.edgeNum && Arrays.equals(adj, that.adj);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(pointNum, edgeNum);
+        result = 31 * result + Arrays.hashCode(adj);
+        return result;
     }
 }

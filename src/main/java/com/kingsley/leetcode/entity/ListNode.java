@@ -2,6 +2,8 @@ package com.kingsley.leetcode.entity;
 
 import lombok.Builder;
 
+import java.util.Objects;
+
 /**
  * @author kingsley
  * @description 链表节点类
@@ -36,5 +38,18 @@ public class ListNode {
         }
         sb.append("}");
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ListNode listNode = (ListNode) o;
+        return val == listNode.val && Objects.equals(next, listNode.next);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(val, next);
     }
 }
