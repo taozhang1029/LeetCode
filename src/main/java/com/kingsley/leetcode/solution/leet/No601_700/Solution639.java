@@ -3,7 +3,7 @@ package com.kingsley.leetcode.solution.leet.No601_700;
 import com.kingsley.leetcode.api.Solution;
 import com.kingsley.leetcode.api.SolutionEntry;
 import com.kingsley.leetcode.api.SolutionInfo;
-import com.kingsley.leetcode.type.DynamicProgramming;
+import com.kingsley.leetcode.type.algorithm.DynamicProgramming;
 import org.junit.Test;
 
 /**

@@ -1,6 +1,6 @@
 package com.kingsley.leetcode.solution.leet.No1_100;
 
-import com.kingsley.leetcode.type.DynamicProgramming;
+import com.kingsley.leetcode.type.algorithm.DynamicProgramming;
 import com.kingsley.leetcode.api.Solution;
 import com.kingsley.leetcode.api.SolutionEntry;
 import com.kingsley.leetcode.api.SolutionInfo;

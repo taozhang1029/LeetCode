@@ -1,4 +1,4 @@
-package com.kingsley.leetcode.type;
+package com.kingsley.leetcode.type.algorithm;
 
 /**
  * @Time 2021/9/15 16:15

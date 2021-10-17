@@ -13,8 +13,5 @@ public class LogTest {
 
     @Test
     public void logTest() {
-        log.info("log test");
-        log.warn("log test");
-        log.error("log test");
     }
 }
