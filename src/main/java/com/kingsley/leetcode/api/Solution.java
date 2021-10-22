@@ -22,6 +22,10 @@ public abstract class Solution {
         return solute(new Object[]{arg});
     }
 
+    protected void checkResult(Object realValue, Object args) {
+        checkResult(realValue, new Object[]{args});
+    }
+
     protected void checkResult(Object realValue, Object... args) {
         if (realValue.getClass().isArray()) {
             checkResult((int[])realValue,args);
@@ -31,7 +35,7 @@ public abstract class Solution {
                 int res = Integer.parseInt(s);
                 checkResult(res, args);
                 return;
-            } catch (ClassCastException e1) {
+            } catch (NumberFormatException e1) {
                 try {
                     boolean res = Boolean.parseBoolean(s);
                     checkResult(res,args);
@@ -71,10 +75,10 @@ public abstract class Solution {
 
     private void checkResult(boolean realValue, Object... args) {
         boolean result = (boolean) solute(args);
-        if (result == realValue) {
-            log.error("解答错误：算法输出为 {}， 正确答案为 {}", result, realValue);
-        } else {
+        if ((result && realValue) || (!result && !realValue)) {
             log.info("用例通过");
+        } else {
+            log.error("解答错误：算法输出为 {}， 正确答案为 {}", result, realValue);
         }
     }
 
